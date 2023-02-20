@@ -4,20 +4,22 @@ import SignIn from './SignIn'
 
 function Main({ user, firebase, firestore, auth, useCollectionData}) {
   return (
-    <div>
-      {user
-        ?<ChatRoom 
-          auth={auth} 
-          firebase={firebase}
-          firestore={firestore} 
-          useCollectionData={useCollectionData}
-        />
-        :<SignIn 
-          auth={auth} 
-          firebase={firebase}
-        />
-      }
-    </div>
+    <main className='main'>
+      <div className="main__container">
+        {user
+          ?<ChatRoom 
+            auth={auth} 
+            firebase={firebase}
+            firestore={firestore} 
+            useCollectionData={useCollectionData}
+          />
+          :<SignIn 
+            auth={auth} 
+            firebase={firebase}
+          />
+        }
+      </div>
+    </main>
   )
 }
 

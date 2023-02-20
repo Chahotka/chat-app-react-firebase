@@ -1,11 +1,20 @@
 import React from 'react'
 import '../styles/header.scss'
+import SignOut from './SignOut'
 
-function Header() {
+function Header({auth}) {
+  const {photoURL} = auth.currentUser
+
+  
   return (
-    <div>
-      Header
-    </div>
+    <header className='header'>
+      <div className="header__container">
+        <div className='header__user-image'>
+          <img src={photoURL} alt="" />
+        </div>
+        <SignOut auth={auth}/>
+      </div>
+    </header>
   )
 }
 

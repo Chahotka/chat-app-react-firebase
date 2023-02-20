@@ -1,0 +1,46 @@
+.message__sent {
+  display: flex;
+  align-items: start;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+.message__received {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon__box {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.message__icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.message__box {
+  padding: 10px 15px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 45%;
+  background: #fff;
+  border-radius: 20px;
+  background: #3c327a;
+}
+
+.message__text {
+  color: #fff;
+  align-self: start;
+}
+
+.message__time {
+  font-size: 12px;
+  color: #a8a8a8;
+  align-self: flex-end;
+}

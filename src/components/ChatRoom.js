@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import '../styles/chat-room.scss'
 import ChatMessage from './ChatMessage'
-import SignOut from './SignOut'
 
 function ChatRoom({firebase, firestore, auth, useCollectionData}) {
   const dummy = useRef()
@@ -16,6 +15,10 @@ function ChatRoom({firebase, firestore, auth, useCollectionData}) {
   
   const sendMessage = async(e) => {
     e.preventDefault()
+
+    if (formValue.length < 1) {
+      return;
+    }
 
     const { uid, photoURL } = auth.currentUser
 
@@ -33,23 +36,22 @@ function ChatRoom({firebase, firestore, auth, useCollectionData}) {
 
   console.log(messages)
   return (
-    <>
-      <SignOut auth={auth} />
-      <div>
+    <section className='chat-room'>
+      <div className='chat-room__messages'>
         { messages && messages.map((msg, i) => <ChatMessage auth={auth} message={msg} key={i}/>) }
 
-        <div ref={dummy}></div>
+        <div className='dummy' ref={dummy}></div>
       </div>
-      <form onSubmit={sendMessage}>
+      <form className='send' onSubmit={sendMessage}>
         <input 
           value={formValue}
           onChange={(e) => setFormValue(e.target.value)}
         />
-        <button type='submit'>
+        <button className='submit' type='submit'>
           <i className="fa-solid fa-feather"></i>
         </button>
       </form>
-    </>
+    </section>
   )
 }
 

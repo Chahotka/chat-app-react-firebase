@@ -1,0 +1,43 @@
+.chat-room {
+  width: 95%;
+  margin: 0 auto;
+
+  .chat-room__messages {
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.send {
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+
+  input {
+    flex: 0 1 95%;
+    border: none;
+    padding: 20px;
+  }
+  
+  .submit {
+    border: none;
+    flex: 0 0 5%;
+    min-width: 30px;
+    background: #0c0b13;
+
+    .fa-feather {
+      color: red;
+    }
+  }
+}
+
+.dummy {
+  height: 50px;
+}

@@ -30,7 +30,7 @@ function App() {
   
   return (
     <div className={`app${user ? '__signed' : ''}`}>
-      {user && <Header />}
+      {user && <Header auth={auth}/>}
       <Main 
         user={user}
         auth={auth}
